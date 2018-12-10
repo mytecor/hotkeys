@@ -1,25 +1,25 @@
 'use strict'
 
 let hotkeys = {
-	add: function(shortcut, callback) {
-		this.hotkeys[shortcut.toLowerCase()] = callback
+	add: function(hotkey, callback) {
+		this.hotkeys[hotkey.toLowerCase()] = callback
 	},
-	remove: function(shortcut) {
-		delete this.hotkeys[shortcut.toLowerCase()]
+	remove: function(hotkey) {
+		delete this.hotkeys[hotkey.toLowerCase()]
 	},
 	keys: {},
 	hotkeys: {},
 	keydown: function(event) {
 		this.keys[event.key.toLowerCase()] = true
-		for(let shortcut in this.hotkeys) {
+		for(let hotkey in this.hotkeys) {
 			let comb = true
-			shortcut.split('+').forEach(key => {
+			hotkey.split('+').forEach(key => {
 				if(!comb) return
 				if(!this.keys[key]) comb = false
 			})
 			if(comb) {
 				event.preventDefault()
-				this.hotkeys[shortcut](shortcut)
+				this.hotkeys[hotkey](hotkey)
 			}
 		}
 	},
