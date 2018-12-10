@@ -1,7 +1,7 @@
 # shortcuts
 Simple lightweight JS keyboard shortcuts library
 
-# Usage
+## Usage
 ```html
 <script src="/js/shortcuts.js" type="text/javascript"></script>
 <script>
