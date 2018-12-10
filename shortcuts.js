@@ -1,6 +1,6 @@
 'use strict'
 
-shortcuts = {
+let shortcuts = {
 	add: function(shortcut, callback) {
 		this.shortcuts[shortcut.toLowerCase()] = callback
 	},
