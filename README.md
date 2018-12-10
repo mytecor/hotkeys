@@ -1,4 +1,4 @@
-# shortcuts.js
+# hotkeys.js
 Simple lightweight JS keyboard shortcuts library
 
 ## Usage
