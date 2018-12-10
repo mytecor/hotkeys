@@ -5,8 +5,13 @@ Simple lightweight JS keyboard shortcuts library
 ```html
 <script src="/js/shortcuts.js" type="text/javascript"></script>
 <script>
-  shortcuts.start()
+  
 </script>
+```
+
+### Start
+```js
+shortcuts.start()
 ```
 
 ### Add new shortcut
@@ -14,4 +19,14 @@ Simple lightweight JS keyboard shortcuts library
 shortcuts.add('alt+arrowleft', (shortcut) => {
   alert(shortcut)
 })
+```
+
+### Remove shortcut
+```js
+shortcuts.remove('alt+arrowleft')
+```
+
+### Stop
+```js
+shortcuts.stop()
 ```
