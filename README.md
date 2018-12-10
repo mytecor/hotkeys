@@ -13,8 +13,8 @@ hotkeys.start()
 
 ### Add new hotkey
 ```js
-hotkeys.add('alt+arrowleft', (shortcut) => {
-  alert(shortcut)
+hotkeys.add('alt+arrowleft', (hotkey) => {
+  alert(hotkey)
 })
 ```
 
