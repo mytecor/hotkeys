@@ -1,29 +1,29 @@
 # hotkeys.js
-Simple lightweight JS keyboard shortcuts library
+Simple lightweight JS keyboard hotkeys library
 
 ## Usage
 ```html
-<script src="shortcuts.js" type="text/javascript"></script>
+<script src="hotkeys.js" type="text/javascript"></script>
 ```
 
 ### Start
 ```js
-shortcuts.start()
+hotkeys.start()
 ```
 
-### Add new shortcut
+### Add new hotkey
 ```js
-shortcuts.add('alt+arrowleft', (shortcut) => {
+hotkeys.add('alt+arrowleft', (shortcut) => {
   alert(shortcut)
 })
 ```
 
-### Remove shortcut
+### Remove hotkey
 ```js
-shortcuts.remove('alt+arrowleft')
+hotkeys.remove('alt+arrowleft')
 ```
 
 ### Stop
 ```js
-shortcuts.stop()
+hotkeys.stop()
 ```
