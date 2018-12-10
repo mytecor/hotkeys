@@ -1,17 +1,17 @@
 'use strict'
 
-let shortcuts = {
+let hotkeys = {
 	add: function(shortcut, callback) {
-		this.shortcuts[shortcut.toLowerCase()] = callback
+		this.hotkeys[shortcut.toLowerCase()] = callback
 	},
 	remove: function(shortcut) {
-		delete this.shortcuts[shortcut.toLowerCase()]
+		delete this.hotkeys[shortcut.toLowerCase()]
 	},
 	keys: {},
-	shortcuts: {},
+	hotkeys: {},
 	keydown: function(event) {
 		this.keys[event.key.toLowerCase()] = true
-		for(let shortcut in this.shortcuts) {
+		for(let shortcut in this.hotkeys) {
 			let comb = true
 			shortcut.split('+').forEach(key => {
 				if(!comb) return
@@ -19,7 +19,7 @@ let shortcuts = {
 			})
 			if(comb) {
 				event.preventDefault()
-				this.shortcuts[shortcut](shortcut)
+				this.hotkeys[shortcut](shortcut)
 			}
 		}
 	},
