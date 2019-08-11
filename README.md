@@ -7,7 +7,7 @@ Simple lightweight JS keyboard hotkeys library
 <script>
 let hotkeys = new Hotkeys
 
-hotkeys.set('ControlLeft+KeyS', () => {
+hotkeys.set('ControlLeft+KeyS', event => {
 	event.returnValue = event.preventDefault()
 	console.log('Saved')
 })
