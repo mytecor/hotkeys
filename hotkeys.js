@@ -6,8 +6,8 @@ class Hotkeys extends Map {
 
 		this.downkeys = new Set()
 
-		this.keydown = event => {
-			this.downkeys.add(event.code)
+		this.keydown = (e = event) => {
+			this.downkeys.add(e.code)
 
 			nextHotkey:
 			for(let [hotkey, callback] of this) {
@@ -15,11 +15,11 @@ class Hotkeys extends Map {
 					if(!this.downkeys.has(key))
 						continue nextHotkey
 
-				callback(event)
+				callback(e)
 			}
 		}
 
-		this.keyup = event => this.downkeys.delete(event.code)
+		this.keyup = (e = event) => this.downkeys.delete(e.code)
 	}
 
 	set(hotkey, callback) {
