@@ -47,12 +47,12 @@ class Hotkeys extends Map {
 	}
 
 	configure() {
-		let keydown = event => {
-			event.returnValue = event.preventDefault()
-			this.downkeys.add(event.code)
+		let keydown = (e = event) => {
+			e.preventDefault()
+			this.downkeys.add(e.code)
 		}
 
-		let keyup = event => {
+		let keyup = (e = event) => {
 			document.removeEventListener('keydown', keydown)
 			document.removeEventListener('keyup', keyup)
 			console.log(Array.from(this.downkeys.keys()).join('+'))
