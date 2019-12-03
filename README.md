@@ -7,8 +7,8 @@ Simple lightweight JS keyboard hotkeys library
 <script>
 let hotkeys = new Hotkeys
 
-hotkeys.set('ControlLeft+KeyS', event => {
-	event.returnValue = event.preventDefault()
+hotkeys.set('ControlLeft+KeyS', e => {
+	e.preventDefault()
 	console.log('Saved')
 })
 
@@ -32,8 +32,8 @@ hotkeys.start()
 
 ### Set new hotkey
 ```js
-hotkeys.set('AltLeft+ArrowRight', event => {
-	alert(event)
+hotkeys.set('AltLeft+ArrowRight', e => {
+	alert(e)
 })
 ```
 
