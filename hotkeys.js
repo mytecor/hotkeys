@@ -6,7 +6,7 @@ class Hotkeys extends Map {
 
 		this.downkeys = new Set()
 
-		this.keydown = (e = event) => {
+		this.keydown = e => {
 			this.downkeys.add(e.code)
 
 			nextHotkey:
@@ -19,7 +19,7 @@ class Hotkeys extends Map {
 			}
 		}
 
-		this.keyup = (e = event) => this.downkeys.delete(e.code)
+		this.keyup = e => this.downkeys.delete(e.code)
 	}
 
 	set(hotkey, callback) {
@@ -47,12 +47,12 @@ class Hotkeys extends Map {
 	}
 
 	configure() {
-		let keydown = (e = event) => {
+		let keydown = e => {
 			e.preventDefault()
 			this.downkeys.add(e.code)
 		}
 
-		let keyup = (e = event) => {
+		let keyup = e => {
 			document.removeEventListener('keydown', keydown)
 			document.removeEventListener('keyup', keyup)
 			console.log(Array.from(this.downkeys.keys()).join('+'))
