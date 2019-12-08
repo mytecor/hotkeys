@@ -34,6 +34,11 @@ hotkeys.set('ControlLeft+ShiftLeft+KeyZ, ControlLeft+KeyY', e => {
 hotkeys.start()
 ```
 
+### Create hotkeys listener
+```js
+let hotkeys = new Hotkeys(target: Node)
+```
+
 The Hotkeys object implements the standart js Map object
 <br>and it adds the following methods:
 
@@ -49,7 +54,7 @@ hotkeys.set(hotkeys: String|Array, callback: Function)
 ###### Example
 ```js
 hotkeys.set('AltLeft+ArrowRight', e => {
-	alert(e)
+	console.log(e)
 })
 ```
 

@@ -1,8 +1,9 @@
 
 export default class Hotkeys extends Map {
-	constructor() {
+	constructor(target = document) {
 		super()
 
+		this.target = target
 		this.downkeys = new Set
 
 		this.keydown = e => {
@@ -35,14 +36,14 @@ export default class Hotkeys extends Map {
 	}
 
 	start() {
-		document.addEventListener('keydown', this.keydown)
-		document.addEventListener('keyup', this.keyup)
+		this.target.addEventListener('keydown', this.keydown)
+		this.target.addEventListener('keyup', this.keyup)
 		return this
 	}
 
 	stop() {
-		document.removeEventListener('keydown', this.keydown)
-		document.removeEventListener('keyup', this.keyup)
+		this.target.removeEventListener('keydown', this.keydown)
+		this.target.removeEventListener('keyup', this.keyup)
 		return this
 	}
 
