@@ -1,10 +1,8 @@
-'use strict'
-
 class Hotkeys extends Map {
 	constructor() {
 		super()
 
-		this.downkeys = new Set()
+		this.downkeys = new Set
 
 		this.keydown = e => {
 			this.downkeys.add(e.code)
@@ -46,17 +44,19 @@ class Hotkeys extends Map {
 		return this
 	}
 
-	configure() {
+	static configure() {
+		let downkeys = new Set
+		
 		let keydown = e => {
 			e.preventDefault()
-			this.downkeys.add(e.code)
+			downkeys.add(e.code)
 		}
 
 		let keyup = e => {
 			document.removeEventListener('keydown', keydown)
 			document.removeEventListener('keyup', keyup)
-			console.log(Array.from(this.downkeys.keys()).join('+'))
-			this.downkeys.clear()
+			console.log(Array.from(downkeys.keys()).join('+'))
+			downkeys.clear()
 		}
 
 		document.addEventListener('keydown', keydown)
