@@ -21,7 +21,7 @@ The Hotkeys object implements the standart js Map object
 
 ### Configure
 ```js
-hotkeys.configure()
+Hotkeys.configure()
 ```
 Look at the console
 
