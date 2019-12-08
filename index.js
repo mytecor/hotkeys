@@ -1,4 +1,5 @@
-class Hotkeys extends Map {
+
+export default class Hotkeys extends Map {
 	constructor() {
 		super()
 

@@ -1,10 +1,27 @@
-# hotkeys.js
+# hotkeys-nano
 Simple lightweight JS keyboard hotkeys library
 
+## Installation
+```
+yarn add hotkeys-nano
+```
+or
+```
+npm install hotkeys-nano
+```
+
+### Configure
+```js
+Hotkeys.configure()
+```
+Look at the console
+
 ## Usage
-```html
-<script src="hotkeys.js" type="text/javascript"></script>
-<script>
+```js
+import Hotkeys from 'hotkeys-nano'
+// or import as module from unpkg:
+// import Hotkeys from 'https://unpkg.com/hotkeys-nano'
+
 let hotkeys = new Hotkeys
 
 hotkeys.set('ControlLeft+KeyS', e => {
@@ -13,17 +30,10 @@ hotkeys.set('ControlLeft+KeyS', e => {
 })
 
 hotkeys.start()
-</script>
 ```
 
-The Hotkeys object implements the standart js Map object
+The Hotkeys object implements the standart js Set object
 <br>and it adds the following methods:
-
-### Configure
-```js
-Hotkeys.configure()
-```
-Look at the console
 
 ### Start listening
 ```js

@@ -1,0 +1,9 @@
+{
+  "name": "hotkeys-nano",
+  "version": "1.0.0",
+  "description": "Simple lightweight JS keyboard hotkeys library",
+  "main": "index.js",
+  "repository": "https://github.com/midnightcoder-pro/hotkeys.git",
+  "author": "midnightcoder",
+  "license": "MIT"
+}
