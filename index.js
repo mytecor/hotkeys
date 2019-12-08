@@ -14,6 +14,7 @@ export default class Hotkeys extends Map {
 					if(!this.downkeys.has(key))
 						continue nextHotkey
 
+				this.downkeys.clear()
 				callback(e)
 			}
 		}
@@ -57,7 +58,6 @@ export default class Hotkeys extends Map {
 			document.removeEventListener('keydown', keydown)
 			document.removeEventListener('keyup', keyup)
 			console.log(Array.from(downkeys.keys()).join('+'))
-			downkeys.clear()
 		}
 
 		document.addEventListener('keydown', keydown)
