@@ -14,7 +14,6 @@ export default class Hotkeys extends Map {
 					if(!this.downkeys.has(key))
 						continue nextHotkey
 
-				this.downkeys.clear()
 				callback(e)
 			}
 		}
@@ -22,15 +21,16 @@ export default class Hotkeys extends Map {
 		this.keyup = e => this.downkeys.delete(e.code)
 	}
 
-	set(hotkey, callback) {
-		super.set(hotkey.split('+'), callback)
+	set(hotkeys, callback) {
+		(hotkeys + '').replace(/ /g, '').split(',').forEach(hotkey => super.set(hotkey.split('+'), callback))
 		return this
 	}
 
-	delete(hotkey) {
-		nextHotkey:
-		for(let [hkey] of this)
-			if(hotkey == hkey.join('+')) return super.delete(hkey)
+	delete(hotkeys) {
+		(hotkeys + '').replace(/ /g, '').split(',').forEach(hotkey => {
+			for(let [hkey] of this)
+				if(hotkey == hkey.join('+')) return super.delete(hkey)
+		})
 		return this
 	}
 
@@ -62,6 +62,6 @@ export default class Hotkeys extends Map {
 
 		document.addEventListener('keydown', keydown)
 		document.addEventListener('keyup', keyup)
-		console.log('now it is waiting for a combination')
+		console.log('[hotkeys-nano] Now I am waiting for a combination')
 	}
 }

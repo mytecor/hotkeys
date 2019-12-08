@@ -19,8 +19,6 @@ Look at the console
 ## Usage
 ```js
 import Hotkeys from 'hotkeys-nano'
-// or import as module from unpkg:
-// import Hotkeys from 'https://unpkg.com/hotkeys-nano'
 
 let hotkeys = new Hotkeys
 
@@ -29,10 +27,14 @@ hotkeys.set('ControlLeft+KeyS', e => {
 	console.log('Saved')
 })
 
+hotkeys.set('ControlLeft+ShiftLeft+KeyZ, ControlLeft+KeyY', e => {
+	console.log('Ctrl+Y')
+})
+
 hotkeys.start()
 ```
 
-The Hotkeys object implements the standart js Set object
+The Hotkeys object implements the standart js Map object
 <br>and it adds the following methods:
 
 ### Start listening
@@ -42,12 +44,20 @@ hotkeys.start()
 
 ### Set new hotkey
 ```js
+hotkeys.set(hotkeys: String|Array, callback: Function)
+```
+###### Example
+```js
 hotkeys.set('AltLeft+ArrowRight', e => {
 	alert(e)
 })
 ```
 
 ### Delete hotkey
+```js
+hotkeys.delete(hotkeys: String|Array)
+```
+###### Example
 ```js
 hotkeys.delete('AltLeft+ArrowRight')
 ```
